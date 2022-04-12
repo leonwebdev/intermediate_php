@@ -1,0 +1,10 @@
+    title VARCHAR(255),  - The title of this post
+    author VARCHAR(255),  - The author of this post
+    category CHAR(128),  - The category that this post belongs to
+    comment INT(255),  - the link to comment relating to this post
+    event INT(255),  - the link to event relating to this post
+    summary TEXT,  - the line of short summary of this post
+    description TEXT,  - the whole content of this post
+    image VARCHAR(255),  - the image linking to this post
+    status ENUM('draft', 'hidden', 'post'),  - the status of this post
+    allow_comment BOOL NOT NULL DEFAULT 0,  - if other users allow comment to this post
