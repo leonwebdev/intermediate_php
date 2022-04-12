@@ -48,3 +48,9 @@ Thumbs.db
 *.mov
 *.wmv
 
+credentials.php
+*.zip
+*.doc
+*.docx
+*.tar.gz
+*.drawio
