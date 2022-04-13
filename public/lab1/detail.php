@@ -19,7 +19,7 @@ include __DIR__ . '/../../includes/header.inc.php';
                 <div style="padding: 0.1em 0.2em ;border-radius: 0 0.2em 0.2em 0;">Rose</div>
             </div>
 
-            <div class="label-box" style="">
+            <div class="label-box" style>
                 <div style="padding: 0.1em 0.2em ;border-radius: 0.2em 0 0 0.2em;background:#65ee8e;">Event</div>
                 <div style="padding: 0.1em 0.2em ;border-radius: 0 0.2em 0.2em 0;"> <a href="#" class="plain_a"
                         style="padding: 0;">View Detail
