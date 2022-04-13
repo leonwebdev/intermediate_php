@@ -22,6 +22,7 @@ if (empty($_GET['p'])) {
 } elseif (in_array($_GET['p'], $allowed)) {
     $page = $_GET['p'];
 } else {
+    http_response_code(404);
     $page = 'error404';
 }
 
