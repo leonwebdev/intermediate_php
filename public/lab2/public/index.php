@@ -34,4 +34,4 @@ require($path);
 
 
 
-echo '<p>You are here!</p>';
+// echo '<p>You are here!</p>';
