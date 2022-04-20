@@ -10,3 +10,4 @@ require __DIR__ . '/../inc/functions.php';
 require __DIR__ . '/../inc/records.inc.php';
 
 // require header
+require __DIR__ . '/../inc/header.inc.php';
