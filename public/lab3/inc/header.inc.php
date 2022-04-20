@@ -37,7 +37,7 @@
 
             <div class="" style="border: 1px solid #000;padding: 1em;min-width:9em;max-width:15em;height:30em;">
                 <h3>Last 10 Pages visited:</h3>
-                <?php for ($i = sizeof($tracker) - 1; $i > sizeof($tracker) - 10 && $i > 0; $i--) : ?>
+                <?php for ($i = sizeof($tracker) - 2; $i > sizeof($tracker) - 12 && $i > 0; $i--) : ?>
                 <p>
                     <a class="plain_a" href="<?= esc($tracker[$i]['file']) ?>"><?= esc($tracker[$i]['title']) ?></a>
                 </p>
