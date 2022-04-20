@@ -1,7 +1,6 @@
 <?php
 
 ob_start();
-// session_start();
 
 // require functions
 require __DIR__ . './../includes/functions.php';
@@ -9,14 +8,19 @@ require __DIR__ . './../includes/functions.php';
 // require model
 require __DIR__ . './../includes/model.php';
 
-$general_query_results = generalQuery();
+if (!empty($_GET)) {
+    # code...
+} else {
+
+    $general_query_results = generalQuery();
+
+    $title = $general_query_results['page_title'];
+    $books = $general_query_results['query_result'];
+}
+
+// Query genre list
 $genres = queryGenre();
 
-// var_dump($general_query_results);
-// var_dump($genres);
-
-$title = $general_query_results['page_title'];
-$books = $general_query_results['query_result'];
 
 
 
@@ -27,7 +31,7 @@ $books = $general_query_results['query_result'];
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Books you might like...</title>
+    <title><?= esc($title) ?></title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
