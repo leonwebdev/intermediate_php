@@ -47,3 +47,28 @@ function generalQuery(): array
 
     return $output;
 }
+
+/**
+ * get all genre list
+ *
+ * @return  array   [return all genre list]
+ */
+function queryGenre(): array
+{
+    global $dbh;
+
+    $query = "SELECT 
+            genre.id as id,
+            genre.name as genre
+            FROM 
+            genre
+            ";
+
+    $stmt = $dbh->query($query);
+
+    $results = $stmt->fetchAll();
+
+    // var_dump($results);
+
+    return $results;
+}

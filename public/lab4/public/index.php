@@ -10,8 +10,10 @@ require __DIR__ . './../includes/functions.php';
 require __DIR__ . './../includes/model.php';
 
 $general_query_results = generalQuery();
+$genres = queryGenre();
 
-var_dump($general_query_results);
+// var_dump($general_query_results);
+// var_dump($genres);
 
 $title = $general_query_results['page_title'];
 $books = $general_query_results['query_result'];
@@ -86,18 +88,10 @@ $books = $general_query_results['query_result'];
                 <h3>Categories</h3>
 
                 <ul>
-                    <li><a href="index.php?genre_id=1">
-                            SF</a></li>
-                    <li><a href="index.php?genre_id=2">
-                            Horror</a></li>
-                    <li><a href="index.php?genre_id=4">
-                            Drama</a></li>
-                    <li><a href="index.php?genre_id=5">
-                            Politics</a></li>
-                    <li><a href="index.php?genre_id=6">
-                            Legal</a></li>
-                    <li><a href="index.php?genre_id=3">
-                            Literature</a></li>
+                    <?php foreach ($genres as $genre) : ?>
+                    <li><a href="index.php?genre_id=<?= esc_attr($genre['id']) ?>">
+                            <?= esc($genre['genre']) ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
