@@ -9,15 +9,15 @@ $tracker = json_decode($_COOKIE['tracker'] ?? '', JSON_OBJECT_AS_ARRAY) ?? [[
     'file' => '',
 ]];
 
-for ($i = sizeof($tracker) - 1; $i > sizeof($tracker) - 10 && $i > 0; $i--) {
+// for ($i = sizeof($tracker) - 1; $i > sizeof($tracker) - 10 && $i > 0; $i--) {
 
-    echo '<p>';
-    // echo $i;
-    // print_r($tracker);
-    // die;
-    echo '<a class = "plain_a" href = "' . $tracker[$i]['file'] . '">' . $tracker[$i]['title'] . '</a>';
-    echo '</p>';
-}
+//     echo '<p>';
+//     // echo $i;
+//     // print_r($tracker);
+//     // die;
+//     echo '<a class = "plain_a" href = "' . $tracker[$i]['file'] . '">' . $tracker[$i]['title'] . '</a>';
+//     echo '</p>';
+// }
 
 $push_array = [
     'title' => $title,
