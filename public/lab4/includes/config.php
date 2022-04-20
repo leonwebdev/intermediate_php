@@ -11,10 +11,10 @@ ini_set('error_reporting', E_ALL);
 
 // Create database connection
 try {
-    $dbh = new PDO('sqlite:' __DIR__ . '/database.sqlite');
+    $dbh = new PDO('sqlite:' . __DIR__ . '/database.sqlite');
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch(Exception $e) {
+} catch (Exception $e) {
     echo '<pre>';
     print_r($e->getTrace());
     echo '</pre>';
