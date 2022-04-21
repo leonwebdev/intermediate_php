@@ -12,7 +12,9 @@ if (!empty($_GET)) {
 
     if ($_GET['author_id']) {
 
-        $title = 'Books By Author:';
+        $query_by_author_results = queryByAuthor($_GET['author_id']);
+        $title = $query_by_author_results['page_title'];
+        $books = $query_by_author_results['query_result'];
     } elseif ($_GET['genre_id']) {
 
         $query_by_genre_results = queryByGenre($_GET['genre_id']);
