@@ -9,10 +9,15 @@ require __DIR__ . './../includes/functions.php';
 require __DIR__ . './../includes/model.php';
 
 if (!empty($_GET)) {
+
     if ($_GET['author_id']) {
+
         $title = 'Books By Author:';
     } elseif ($_GET['genre_id']) {
-        $title = 'Books By Genre:';
+
+        $query_by_genre_results = queryByGenre($_GET['genre_id']);
+        $title = $query_by_genre_results['page_title'];
+        $books = $query_by_genre_results['query_result'];
     } elseif ($_GET['search']) {
         $title = 'You searched for:';
     } else {
@@ -27,7 +32,7 @@ if (!empty($_GET)) {
 }
 
 // Query genre list
-$genres = queryGenre();
+$genres = queryGenreList();
 
 ?>
 <!DOCTYPE html>
