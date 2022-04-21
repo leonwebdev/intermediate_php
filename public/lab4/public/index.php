@@ -10,20 +10,26 @@ require __DIR__ . './../includes/model.php';
 
 if (!empty($_GET)) {
 
-    if ($_GET['author_id']) {
+    if (array_key_exists('author_id', $_GET)) {
 
         $query_by_author_results = queryByAuthor($_GET['author_id']);
         $title = $query_by_author_results['page_title'];
         $books = $query_by_author_results['query_result'];
-    } elseif ($_GET['genre_id']) {
+    } elseif (array_key_exists('genre_id', $_GET)) {
 
         $query_by_genre_results = queryByGenre($_GET['genre_id']);
         $title = $query_by_genre_results['page_title'];
         $books = $query_by_genre_results['query_result'];
-    } elseif ($_GET['search']) {
+    } elseif (array_key_exists('search', $_GET)) {
+
         $title = 'You searched for:';
     } else {
-        $title = 'We recommand:';
+
+        // $title = 'We recommand:';
+        $general_query_results = generalQuery();
+
+        $title = $general_query_results['page_title'];
+        $books = $general_query_results['query_result'];
     }
 } else {
 
