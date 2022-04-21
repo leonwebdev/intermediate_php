@@ -85,6 +85,7 @@ $genres = queryGenreList();
         <div class="header_img">
             <img src="images/header.jpg" alt="header" />
         </div>
+
         <div class="search">
 
             <form action="index.php" method="get" autocomplete="off" novalidate>
