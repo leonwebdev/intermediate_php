@@ -22,19 +22,18 @@ if (!empty($_GET)) {
         $books = $query_by_genre_results['query_result'];
     } elseif (array_key_exists('search', $_GET)) {
 
-        $title = 'You searched for:';
+        $query_by_search_results = queryBySearch($_GET['search']);
+        $title = $query_by_search_results['page_title'];
+        $books = $query_by_search_results['query_result'];
     } else {
 
-        // $title = 'We recommand:';
         $general_query_results = generalQuery();
-
         $title = $general_query_results['page_title'];
         $books = $general_query_results['query_result'];
     }
 } else {
 
     $general_query_results = generalQuery();
-
     $title = $general_query_results['page_title'];
     $books = $general_query_results['query_result'];
 }
