@@ -9,7 +9,15 @@ require __DIR__ . './../includes/functions.php';
 require __DIR__ . './../includes/model.php';
 
 if (!empty($_GET)) {
-    # code...
+    if ($_GET['author_id']) {
+        $title = 'Books By Author:';
+    } elseif ($_GET['genre_id']) {
+        $title = 'Books By Genre:';
+    } elseif ($_GET['search']) {
+        $title = 'You searched for:';
+    } else {
+        $title = 'We recommand:';
+    }
 } else {
 
     $general_query_results = generalQuery();
@@ -20,9 +28,6 @@ if (!empty($_GET)) {
 
 // Query genre list
 $genres = queryGenre();
-
-
-
 
 ?>
 <!DOCTYPE html>
