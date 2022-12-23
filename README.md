@@ -1,7 +1,7 @@
 # Intermediate PHP
 
 - L Y <yao-l@webmail.uwinnipeg.ca>
-- http://
+
 - Server IP: 52.60.51.49
 
 ---
